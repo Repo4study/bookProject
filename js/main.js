@@ -43,7 +43,9 @@ houseFeatures.innerHTML = offers[1].offer.features;
  popupPhoto.style.width = "100px";
  popupPhoto.style.height = "100px";
 
- 
+ let popupAvatar = map.querySelector('.popup__avatar');
+ popupAvatar.innerHTML = offers[1].author.avatar;
+ console.log(popupAvatar);
 
 
 
