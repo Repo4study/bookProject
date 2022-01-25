@@ -40,6 +40,9 @@ houseFeatures.innerHTML = offers[1].offer.features;
  let popupPhotosBlock = map.querySelector('.popup__photos');
  let popupPhoto = map.querySelector('.popup__photo');
  popupPhoto.src = offers[1].offer.photos;
+ popupPhoto.style.width = "100px";
+ popupPhoto.style.height = "100px";
+
  
 
 
