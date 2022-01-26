@@ -40,12 +40,24 @@ houseFeatures.innerHTML = offers[1].offer.features;
  let popupPhotosBlock = map.querySelector('.popup__photos');
  let popupPhoto = map.querySelector('.popup__photo');
  popupPhoto.src = offers[1].offer.photos;
- popupPhoto.style.width = "100px";
- popupPhoto.style.height = "100px";
+
+ let photoObj = offers[1].offer.photos;
+
+ let popPhotos = document.querySelector(".popup__photos");
+    let newPhotos = photoObj.map(photo => {
+    return`<img src='${photo}'>`
+     }).join(''); 
+ 
+   popPhotos.innerHTML  = newPhotos;
+   console.log(popPhotos);
+ 
+ 
 
  let popupAvatar = map.querySelector('.popup__avatar');
  popupAvatar.innerHTML = offers[1].author.avatar;
  console.log(popupAvatar);
+
+
 
 
 
