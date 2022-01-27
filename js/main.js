@@ -30,8 +30,11 @@ area.innerHTML = offers[1].offer.rooms + `${'комнаты для'}` + offers[1
 let checks = map.querySelector('.popup__text--time');
  checks.innerHTML = `${'Заезд после'}`+ offers[1].offer.checkin + `${','}` + `${'выезд до'}` + offers[1].offer.checkout; 
 
-let houseFeatures = map.querySelector('.popup__features'); 
+let houseFeatures = map.querySelector('.popup__feature'); 
 houseFeatures.innerHTML = offers[1].offer.features;
+// let newFeatures = houseFeatures.map(Features => {
+//   return`<li class="popup__feature popup__feature--${Features}"> -----------------------------------???`
+// }).join('');
  console.log(houseFeatures);
 
  let popupDescription = map.querySelector('.popup__description');
@@ -45,8 +48,8 @@ houseFeatures.innerHTML = offers[1].offer.features;
 
  let popPhotos = document.querySelector(".popup__photos");
     let newPhotos = photoObj.map(photo => {
-    return`<img src='${photo}'>`
-     }).join(''); 
+    return`<img src='${photo} ' class="popup__photo" width="45" height="40" alt="Фотография жилья">`
+     }).join('');
  
    popPhotos.innerHTML  = newPhotos;
    console.log(popPhotos);

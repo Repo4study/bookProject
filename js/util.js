@@ -27,7 +27,7 @@
             };
 
             function getPhotos(photos) {
-                const indexPhotos = randomInteger(0, photos.length - 1);
+                const indexPhotos = randomInteger(0, photos.length);
                 return photos.splice(0, indexPhotos);
             };
 
