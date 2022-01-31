@@ -30,12 +30,14 @@ area.innerHTML = offers[1].offer.rooms + `${'комнаты для'}` + offers[1
 let checks = map.querySelector('.popup__text--time');
  checks.innerHTML = `${'Заезд после'}`+ offers[1].offer.checkin + `${','}` + `${'выезд до'}` + offers[1].offer.checkout; 
 
-let houseFeatures = map.querySelector('.popup__feature'); 
-houseFeatures.innerHTML = offers[1].offer.features;
-// let newFeatures = houseFeatures.map(Features => {
-//   return`<li class="popup__feature popup__feature--${Features}"> -----------------------------------???`
-// }).join('');
- console.log(houseFeatures);
+let someFeatures = offers[1].offer.features;
+
+let featuresWrapper = document.querySelector(".popup__features");
+let newFeatures = someFeatures.map(constFeatures => {
+  return`<li class="popup__feature popup__feature--${constFeatures}">${constFeatures}</li>`
+   }).join('');
+   featuresWrapper.innerHTML = newFeatures;
+   console.log(featuresWrapper);
 
  let popupDescription = map.querySelector('.popup__description');
  popupDescription.innerHTML = offers[1].offer.description;
@@ -61,7 +63,35 @@ houseFeatures.innerHTML = offers[1].offer.features;
  console.log(popupAvatar);
 
 
+ const type = document.querySelector('#type')
 
+ const price= document.querySelector('#price')
+ 
+ 
+ 
+ function validation(evt){
+ console.log(evt.target.value)
+   if (type.value === 'flat' &&  evt.target.value <= 1000) {
+     evt.target.setCustomValidity('1000');
+   }
+   else if (type.value === 'house' && evt.target.value  <= 2000){
+     evt.target.setCustomValidity('The price cannot be less 2000 ');
+   }
+   else if (type.value === 'palace' && evt.target.value  <= 5000){
+     evt.target.setCustomValidity('The price cannot be less 5000');
+     console.log(price);
+   }
+   else if (type.value === 'bungalow' && evt.target.value  <= 7000){
+    evt.target.setCustomValidity('The price cannot be less 7000');
+  }
+   else {
+     evt.target.setCustomValidity('');
+     alert('Correct!');
+   }
+   price.reportValidity();
+ 
+ }
+ price.addEventListener('change',validation)
 
 
 
