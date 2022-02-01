@@ -91,7 +91,28 @@ let newFeatures = someFeatures.map(constFeatures => {
    price.reportValidity();
  
  }
- price.addEventListener('change',validation)
+ price.addEventListener('change',validation);
+
+
+ const timeIn = document.getElementById("timein");
+const timeOut = document.getElementById("timeout");
+
+timeIn.addEventListener("change", time);
+console.log(timeOut.options)
+
+    function time (evt){
+    const selectedValue= evt.target.value;
+    console.log(+selectedValue)
+     if(selectedValue == '12:00'){
+timeOut.options[1].selected = true
+     } else if (selectedValue == '13:00'){
+      timeOut.options[2].selected = true
+           } 
+           else if (selectedValue == '14:00'){
+            timeOut.options[0].selected = true
+                 } 
+  
+}
 
 
 
