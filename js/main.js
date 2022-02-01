@@ -97,10 +97,10 @@ let newFeatures = someFeatures.map(constFeatures => {
  const timeIn = document.getElementById("timein");
 const timeOut = document.getElementById("timeout");
 
-timeIn.addEventListener("change", time);
+timeIn.addEventListener("change", timeCome);
 console.log(timeOut.options)
 
-    function time (evt){
+    function timeCome (evt){
     const selectedValue= evt.target.value;
     console.log(+selectedValue)
      if(selectedValue == '12:00'){
@@ -113,6 +113,23 @@ timeOut.options[1].selected = true
                  } 
   
 }
+timeOut.addEventListener("change", timeExit);
+console.log(timeIn.options)
+
+    function timeExit (evt){
+    const selectedValue= evt.target.value;
+    console.log(+selectedValue)
+     if(selectedValue == '12:00'){
+timeIn.options[1].selected = true
+     } else if (selectedValue == '13:00'){
+      timeIn.options[2].selected = true
+           } 
+           else if (selectedValue == '14:00'){
+            timeIn.options[0].selected = true
+                 } 
+  
+}
+
 
 
 
